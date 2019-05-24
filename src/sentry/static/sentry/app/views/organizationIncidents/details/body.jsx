@@ -10,13 +10,14 @@ import MarkPoint from 'app/components/charts/components/markPoint';
 import NavTabs from 'app/components/navTabs';
 import SeenByList from 'app/components/seenByList';
 import SentryTypes from 'app/sentryTypes';
+import SideHeader from 'app/views/organizationIncidents/details/sideHeader';
 import space from 'app/styles/space';
 import theme from 'app/utils/theme';
 
 import Activity from './activity';
 import IncidentsSuspects from './suspects';
-import detectedSymbol from './detectedSymbol';
 import closedSymbol from './closedSymbol';
+import detectedSymbol from './detectedSymbol';
 
 const TABS = {
   activity: {name: t('Activity'), component: Activity},
@@ -111,6 +112,7 @@ export default class DetailsBody extends React.Component {
         </Main>
         <Sidebar>
           <PageContent>
+            <SideHeader>{t('Events in Incident')}</SideHeader>
             {incident && (
               <LineChart
                 isGroupedByDate
